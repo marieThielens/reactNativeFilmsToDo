@@ -7,21 +7,20 @@ const AjouterTache = () => {
 
     const [ nomTache, setNomTache ] = useState('');
     const [ Description, setDescritpion ] = useState('');
+    const [ toDoList, setToDoList ] = useState([]);
 
-    // Modification des inputs (l'utilisateur commence à taper )
-    const auChangementNomTache = ( text ) => {
-        setNomTache(text);
-    }
-    const auChangementNomDescritpion = ( text ) => {
-        setDescritpion(text);
-    }
+    // const ajouterDansList = (value) => {
+    //     setToDoList((essais) => [value, ...value]);
+        
+    // }
 
+   // data={ mesTodos }
     return (
      <View>
          <Text style={monStyle.titre}>Ajouter une tache</Text>
-        <TextInput placeholder='Ajouter une tache' onChangeText={auChangementNomTache} style={monStyle.input}/>
-        <TextInput placeholder='Description' onChangeText={auChangementNomDescritpion} style={monStyle.input}/>
-        <Button title='Ajouter' onPress={() => {}}/>
+        <TextInput placeholder='Ajouter une tache' onChangeText={(text) => setNomTache(text)} style={monStyle.input}/>
+        <TextInput placeholder='Description' onChangeText={(text) => setDescritpion(text) } style={monStyle.input}/>
+        <Button title='Ajouter' onPress={() => { ajouterDansList(mesTodos) }}/>
         
         <FlatList
           data={ mesTodos }

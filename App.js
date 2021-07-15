@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+// npm install --save react-native-vector-image
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View, FlatList} from 'react-native';
+// import VectorImage from 'react-native-vector-image';
+import Ionicons from 'react-native-vector-icons/Ionicons'
+
+import { SafeAreaView, StatusBar, useColorScheme} from 'react-native';
 
 import AjouterTache from './src/components/AjouterTache';
 import Films from './src/containers/Films';
@@ -29,15 +32,20 @@ const App = () => {
       {/* <Films />
 
       <AjouterTache/> */}
+     
 
       <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="ToDoList" component={AjouterTache} options={{ 
-          tabBarIcon : ({ color }) => (
-            <Ionicons name="home" color={color} size={26} />
-          )
-           }}/>
-        <Tab.Screen name="Film" component={Films} />
+          tabBarIcon : ({ color, size }) => (
+              <Ionicons name="alarm" size={size} color={color} />
+          ),  }} />
+
+        <Tab.Screen name="Film" component={Films} options={{ 
+          tabBarIcon : ({ color, size }) => (
+            <Ionicons name="play" size={size} color={color} />
+          ),  }} />
+    {/* <VectorImage source={require('./src/img/horloge.png')} /> */}
       </Tab.Navigator>
     </NavigationContainer>
 
