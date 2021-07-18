@@ -2,15 +2,17 @@ import React from 'react';
 import { View, Text, Image } from 'react-native';
 import monStyle from '../monStyle';
 
+import { imageApi } from '../api/FilmApi'; // Récupérer les images des films avec l'Api
+
 const FilmItem = ( film ) => {
   //  console.log(props);  //envoie tout le contenu de filmData
     //const { film } = props;
     return (
         <View style={monStyle.film_container}>
-            <Image style={monStyle.image} source={{uri: "image"}} />
+            <Image style={monStyle.image} source={{uri: imageApi(film.mesFilms.poster_path)}} />
             <View style={monStyle.content_container}>
                 <View style={monStyle.header_container}>
-                    {/* props. mesFilms voir flatlist dans film.js */}
+                    {/* props. mesFilms voir flatlist dans */}
                     <Text style={monStyle.title_text}>{film.mesFilms.title}</Text>
                     <Text style={monStyle.vote_text}>{ film.mesFilms.vote_average}</Text>
                 </View>

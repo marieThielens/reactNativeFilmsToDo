@@ -10,7 +10,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import { SafeAreaView, StatusBar, useColorScheme} from 'react-native';
 
 import AjouterTache from './src/components/AjouterTache';
-import Films from './src/containers/Films';
+import RechercheFilms from './src/containers/RechercheFilms';
 
 // Navigation
 const Tab = createBottomTabNavigator();
@@ -27,21 +27,16 @@ const App = () => {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-
-      {/* <Films />
-
-      <AjouterTache/> */}
-     
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />     
 
       <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator initialRouteName={RechercheFilms}>
         <Tab.Screen name="ToDoList" component={AjouterTache} options={{ 
           tabBarIcon : ({ color, size }) => (
               <Ionicons name="alarm" size={size} color={color} />
           ),  }} />
 
-        <Tab.Screen name="Film" component={Films} options={{ 
+        <Tab.Screen name="Film" component={RechercheFilms} options={{ 
           tabBarIcon : ({ color, size }) => (
             <Ionicons name="play" size={size} color={color} />
           ),  }} />

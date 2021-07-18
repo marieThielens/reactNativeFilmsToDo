@@ -17,10 +17,10 @@ export default StyleSheet.create({
         paddingVertical: 5,
         marginVertical: 5,
     },
-    filmContainer: {
-        flex: 1,
-        marginTop:20
-    },
+    // filmContainer: {
+    //     flex: 1,
+    //     marginTop:20
+    // },
 
     // Item film ...................
 
